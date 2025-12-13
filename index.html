@@ -28,6 +28,19 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <script>
+            // Redirect to event page until after 2025-01-20
+            (function() {
+                var now = new Date();
+                var cutoff = new Date('2025-01-20T00:00:00Z');
+                var onEventPage = /event\.html$/i.test(window.location.pathname);
+                if (now < cutoff && !onEventPage) {
+                    // Preserve hash if any
+                    var target = window.location.origin + window.location.pathname.replace(/index\.html$/i, '') + 'event.html' + window.location.hash;
+                    window.location.replace(target);
+                }
+            })();
+        </script>
     </head>
 
     <body>
@@ -1371,13 +1384,13 @@
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-white mb-4">Quick Links</h4>
-                            <a href="about.html" class="footer-link"> About Us</a>
-                            <a href="classes.html" class="footer-link"> Academics</a>
-                            <a href="training.html" class="footer-link"> Facilities</a>
-                            <a href="event.html" class="footer-link"> Programs</a>
-                            <a href="contact.html" class="footer-link"> Admissions</a>
-                            <a href="#" class="footer-link"> FAQ</a>
-                            <a href="contact.html" class="footer-link"> Contact Us</a>
+                            <a href="index.html" class="footer-link">Home</a>
+                            <a href="about.html" class="footer-link">About</a>
+                            <a href="classes.html" class="footer-link">Academics</a>
+                            <a href="training.html" class="footer-link">Facilities</a>
+                            <a href="event.html" class="footer-link">Events</a>
+                            <a href="gallery.html" class="footer-link">Gallery</a>
+                            <a href="contact.html" class="footer-link">Contact</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
