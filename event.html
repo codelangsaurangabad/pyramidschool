@@ -78,8 +78,9 @@
         <!-- Navbar & Hero Start -->
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand p-0">
-                    <img src="img/logo.png" alt="Pyramid International School Logo" style="height: 60px;">
+                <a href="index.html" class="navbar-brand p-0 d-flex align-items-center">
+                    <img src="img/logo.png" alt="Logo" style="height: 50px; margin-right: 10px;">
+                    <h1 class="text-primary m-0 d-none d-md-inline">PYRAMID SCHOOL</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -88,8 +89,6 @@
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="classes.html" class="nav-item nav-link">Academics</a>
-                        <a href="training.html" class="nav-item nav-link">Facilities</a>
                         <a href="event.html" class="nav-item nav-link active">Events</a>
                         <a href="gallery.html" class="nav-item nav-link">Gallery</a>
                         <a href="disclosure.html" class="nav-item nav-link">Disclosure</a>
@@ -104,7 +103,7 @@
 
         <!-- Video Popup Start -->
         <div id="videoPopup"
-            style="position: fixed; top: 20px; right: 20px; z-index: 9999; background: #000; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); max-height: 50vh; width: auto; display: block;">
+            style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; background: #000; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); max-height: 50vh; width: auto; display: block;">
             <button onclick="document.getElementById('videoPopup').style.display='none'" style="position: absolute; top: 5px; right: 5px; background: #fff; border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; z-index: 10000; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
                 <i class="fas fa-times" style="color: #000;"></i>
             </button>
@@ -136,7 +135,7 @@
                 .header-carousel-item { height: 400px; }
                 .carousel-caption h1 { font-size: 2rem; }
                 .carousel-caption p { font-size: 1rem; }
-                #videoPopup { max-height: 30vh; top: 10px; right: 10px; }
+                #videoPopup { max-height: 30vh; bottom: 10px; left: 10px; }
                 #videoPopup video { max-height: 30vh; }
             }
             
@@ -146,7 +145,7 @@
                 .carousel-caption p { font-size: 0.9rem; }
                 .navbar-toggler { border-color: #0d6efd; }
                 .fa-bars { color: #0d6efd; }
-                #videoPopup { max-height: 25vh; top: 10px; right: 10px; }
+                #videoPopup { max-height: 25vh; bottom: 10px; left: 10px; }
                 #videoPopup video { max-height: 25vh; }
                 .carousel-action-buttons .btn { font-size: 0.85rem; padding: 8px 20px; }
             }

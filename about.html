@@ -1,395 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>JustDance - Dance Class Website Template</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+<head>
+    <meta charset="utf-8">
+    <title>JustDance - Dance Class Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Yantramanav:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Yantramanav:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 
-    <body>
+    <style>
+        .video-breadcrumb {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
 
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+        .video-breadcrumb video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .video-breadcrumb .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .video-breadcrumb .container {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        <!-- Spinner End -->
+    </div>
+    <!-- Spinner End -->
 
 
-        <!-- Topbar Start -->
-        <div class="container-fluid bg-secondary px-5 d-none d-lg-block">
-            <div class="row gx-0 align-items-center" style="height: 45px;">
-                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
-                    <div class="d-flex flex-wrap">
-                        <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Silicon Valley, Aurangabad</a>
-                        <a href="tel:9595737888" class="text-light me-4"><i class="fas fa-phone-alt text-primary me-2"></i>9595 737 888</a>
-                        <a href="mailto:info@pyramidschool.org" class="text-light me-0"><i class="fas fa-envelope text-primary me-2"></i>info@pyramidschool.org</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center text-lg-end">
-                    <div class="d-flex justify-content-end">
-                        <div class="border-end border-start py-1">
-                            <a href="#" class="btn text-primary"><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                        <div class="border-end py-1">
-                            <a href="#" class="btn text-primary"><i class="fab fa-twitter"></i></a>
-                        </div>
-                        <div class="border-end py-1">
-                            <a href="#" class="btn text-primary"><i class="fab fa-instagram"></i></a>
-                        </div>
-                        <div class="border-end py-1">
-                            <a href="#" class="btn text-primary"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Topbar End -->
-
-
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fas fa-graduation-cap me-3"></i>Pyramid School</h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link active">About</a>
-                        <a href="classes.html" class="nav-item nav-link">Academics</a>
-                        <a href="training.html" class="nav-item nav-link">Facilities</a>
-                        <a href="event.html" class="nav-item nav-link">Events</a>
-                        <a href="gallery.html" class="nav-item nav-link">Gallery</a>
-                        <a href="disclosure.html" class="nav-item nav-link">Disclosure</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Apply for Admission</a>
-                </div>
-            </nav>
-        </div>
-        <!-- Navbar & Hero End -->
-
-
-        <!-- Header Start -->
-        <div style="position: relative; height: 520px; overflow: hidden;">
-            <img src="img/about-2.png" style="width: 100%; height: 100%; object-fit: cover;" alt="About Us">
-            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.45);" class="breadcrumb-overlay"></div>
-            <div class="container text-center py-5" style="max-width: 900px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;">
-                <h3 class="text-white display-3 wow fadeInDown" data-wow-delay="0.1s">About Pyramid International School</h3>
-                <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#" class="text-white">Pages</a></li>
-                    <li class="breadcrumb-item active text-white">About</li>
-                </ol>    
-            </div>
-        </div>
-        <!-- Header End -->
-		
-
-        <!-- Banner Start -->
-        <div class="container-fluid bg-secondary wow zoomInDown" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center text-center p-5">
-                    <h1 class="me-4"><span class="fw-normal">Join us today for </span><span> your first dance</span></h1>
-                    <a href="tel:9595737888" class="text-white fw-bold fs-2"> <i class="fa fa-phone me-1"></i> 9595 737 888</a>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-secondary px-5 d-none d-lg-block">
+        <div class="row gx-0 align-items-center" style="height: 45px;">
+            <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                <div class="d-flex flex-wrap">
+                    <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Silicon
+                        Valley, Aurangabad</a>
+                    <a href="tel:9595737888" class="text-light me-4"><i
+                            class="fas fa-phone-alt text-primary me-2"></i>9595 737 888</a>
+                    <a href="mailto:info@pyramidschool.org" class="text-light me-0"><i
+                            class="fas fa-envelope text-primary me-2"></i>info@pyramidschool.org</a>
                 </div>
             </div>
-        </div>
-        <!-- Banner End -->
-
-
-        <!-- About Start -->
-        <div class="container-fluid py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
-                        <div class="border bg-secondary rounded">
-                            <img src="img/about-2.png" class="img-fluid w-100 rounded" alt="Image">
-                        </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-flex justify-content-end">
+                    <div class="border-end border-start py-1">
+                        <a href="#" class="btn text-primary"><i class="fab fa-facebook-f"></i></a>
                     </div>
-                    <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.3s">
-                        <h4 class="text-secondary sub-title fw-bold">about The Dance School</h4>
-                        <h1 class="display-3 mb-4"><strong class="text-primary">JustDance</strong>, We have been teaching dance since 2001</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint commodi alias, eius incidunt similique exercitationem magni quod recusandae maiores ducimus non porro neque odio explicabo, doloribus deleniti rem sequi adipisci sed ab qui dolorem. Optio sint eius illum consequuntur. Odit.
-                        </p>
-                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore illum nemo deserunt reiciendis perferendis incidunt ullam expedita dolor, voluptas repellat necessitatibus dolore repellendus dolorum, voluptate dolorem. Debitis quis ipsa ullam neque corrupti maxime ad magni, tempore, aperiam rerum, perspiciatis fuga.
-                        </p>
-                        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Learn More</a>
+                    <div class="border-end py-1">
+                        <a href="#" class="btn text-primary"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="border-end py-1">
+                        <a href="#" class="btn text-primary"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="border-end py-1">
+                        <a href="#" class="btn text-primary"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- About End -->
+    </div>
+    <!-- Topbar End -->
 
 
-        <!-- Counter Facts Start -->
-        <div class="container-fluid counter-facts py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="counter">
-                            <div class="counter-icon w-100 d-flex align-items-center justify-content-center">
-                                <h3>Dance Classes</h3>
-                            </div>
-                            <div class="counter-content d-flex align-items-center justify-content-center mt-4">
-                                <span class="counter-value" data-toggle="counter-up">158</span>
-                                <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="counter">
-                            <div class="counter-icon w-100 d-flex align-items-center justify-content-center">
-                                <h3>Best Instructor</h3>
-                            </div>
-                            <div class="counter-content d-flex align-items-center justify-content-center mt-4">
-                                <span class="counter-value" data-toggle="counter-up">49</span>
-                                <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="counter">
-                            <div class="counter-icon w-100 d-flex align-items-center justify-content-center">
-                                <h3>Total Brunch</h3>
-                            </div>
-                            <div class="counter-content d-flex align-items-center justify-content-center mt-4">
-                                <span class="counter-value" data-toggle="counter-up">17</span>
-                                <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="counter">
-                            <div class="counter-icon w-100 d-flex align-items-center justify-content-center">
-                                <h3>Happy customer</h3>
-                            </div>
-                            <div class="counter-content d-flex align-items-center justify-content-center mt-4">
-                                <span class="counter-value" data-toggle="counter-up">567</span>
-                                <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0 d-flex align-items-center">
+                <img src="img/logo.png" alt="Logo" style="height: 50px; margin-right: 10px;">
+                <h1 class="text-primary m-0 d-none d-md-inline">PYRAMID SCHOOL</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link active">About</a>
+                    <a href="event.html" class="nav-item nav-link">Events</a>
+                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                    <a href="disclosure.html" class="nav-item nav-link">Disclosure</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
+                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Apply
+                    for Admission</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+    <!-- Header with Video Background Start -->
+    <div class="container-fluid video-breadcrumb">
+        <video autoplay muted loop>
+            <source src="img/pyramid_intro.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="container text-center py-5"
+            style="max-width: 900px; position: relative; top: 50%; transform: translateY(-50%);">
+            <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">About Pyramid International
+                School</h3>
+            <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" class="text-white">Pages</a></li>
+                <li class="breadcrumb-item active text-primary">About</li>
+            </ol>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Banner Start -->
+    <div class="container-fluid bg-secondary wow zoomInDown" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center text-center p-5">
+                <h1 class="me-4"><span class="fw-normal">Shape Your Child's Future - </span><span>Apply for Admission
+                        Today!</span></h1>
+                <a href="tel:9595737888" class="text-white fw-bold fs-2"><i class="fa fa-phone me-1"></i> 9595 737
+                    888</a>
             </div>
         </div>
-        <!-- Counter Facts End -->
+    </div>
+    <!-- Banner End -->
 
 
-        <!-- Team Start -->
-        <div class="container-fluid team py-5">
-            <div class="container py-5">
-                <div class="pb-5">
-                    <h4 class="text-secondary sub-title fw-bold wow fadeInUp" data-wow-delay="0.1s">Dance Teachers</h4>
-                    <h1 class="display-2 mb-0 wow fadeInUp" data-wow-delay="0.3s">Our Professional Instructor</h1>
-                </div>
-                <div class="team-carousel owl-carousel pt-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item border rounded wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-img bg-secondary rounded-top">
-                            <img src="img/team-1.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            <div class="team-icon">
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-content text-center p-4">
-                            <a href="#" class="h4">Emily Ava</a>
-                            <p class="mb-0 text-primary">Instructor</p>
-                        </div>
-                    </div>
-                    <div class="team-item border rounded wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-img bg-secondary rounded-top">
-                            <img src="img/team-2.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            <div class="team-icon">
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-content text-center p-4">
-                            <a href="#" class="h4">Emily Ava</a>
-                            <p class="mb-0 text-primary">Instructor</p>
-                        </div>
-                    </div>
-                    <div class="team-item border rounded wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-img bg-secondary rounded-top">
-                            <img src="img/team-3.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            <div class="team-icon">
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-content text-center p-4">
-                            <a href="#" class="h4">Emily Ava</a>
-                            <p class="mb-0 text-primary">Instructor</p>
-                        </div>
-                    </div>
-                    <div class="team-item border rounded wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-img bg-secondary rounded-top">
-                            <img src="img/team-4.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            <div class="team-icon">
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-content text-center p-4">
-                            <a href="#" class="h4">Emily Ava</a>
-                            <p class="mb-0 text-primary">Instructor</p>
-                        </div>
-                    </div>
-                    <div class="team-item border rounded wow fadeInUp" data-wow-delay="0.9s">
-                        <div class="team-img bg-secondary rounded-top">
-                            <img src="img/team-4.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            <div class="team-icon">
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-content text-center p-4">
-                            <a href="#" class="h4">Emily Ava</a>
-                            <p class="mb-0 text-primary">Instructor</p>
-                        </div>
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
+                    <div class="border bg-secondary rounded">
+                        <img src="img/aboutus.jpg" class="img-fluid w-100 rounded" alt="Pyramid International School">
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- Team End -->
-
-
-        <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <div class="footer-item">
-                                <h4 class="text-white mb-4">JustDanc</h4>
-                                <p class="text-white mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
-                                <div class="d-flex">
-                                    <a class="btn btn-lg-square btn-primary rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.3s">
+                    <h4 class="text-secondary sub-title fw-bold">Experiential Learning School</h4>
+                    <h1 class="display-3 mb-4"><strong class="text-primary">Pyramid International School</strong> - The
+                        Foundation of Success</h1>
+                    <p>"The foundation of success begins with the right school!" Pyramid International School is a
+                        CBSE-affiliated institution (Affiliation No. 1131240) dedicated to providing holistic education
+                        that nurtures every child's intellectual, emotional, and social growth. Our philosophy is built
+                        on five pillars: knowledge, wisdom, spiritual perception, eloquent speech, and vision.
+                    </p>
+                    <p class="mb-4">We emphasize experiential learning and all-round development. Located on a 2-acre
+                        eco-friendly campus in Silicon Valley, Behind Himayat Bagh, Aurangabad, we offer world-class
+                        infrastructure including smart classrooms, well-equipped science and computer labs,
+                        air-conditioned learning spaces, and comprehensive sports facilities. Our dynamic faculty and
+                        student-centered approach ensure students are prepared for the competitive 21st-century world
+                        while maintaining strong values and character.
+                    </p>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <i class="fas fa-check-circle text-primary fs-4 me-2 mt-1"></i>
+                                <div>
+                                    <h5>CBSE Affiliated</h5>
+                                    <p class="mb-0 text-muted">Affiliation No. 1131240</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <i class="fas fa-check-circle text-primary fs-4 me-2 mt-1"></i>
+                                <div>
+                                    <h5>14+ Years Excellence</h5>
+                                    <p class="mb-0 text-muted">Established 2010</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <i class="fas fa-check-circle text-primary fs-4 me-2 mt-1"></i>
+                                <div>
+                                    <h5>Eco-Friendly Campus</h5>
+                                    <p class="mb-0 text-muted">2-Acre Green Campus</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <i class="fas fa-check-circle text-primary fs-4 me-2 mt-1"></i>
+                                <div>
+                                    <h5>Competitive Coaching</h5>
+                                    <p class="mb-0 text-muted">NDA, JEE, NEET Prep</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Address</h4>
-                            <div class="d-flex align-items-center mb-3">
-                                <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i class="fas fa-map-marker-alt"></i></a>
-                                <div class="text-white ms-2">
-                                    <p class="mb-0">0123.. Street, New York, USA</p>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i class="fa fa-phone-alt"></i></a>
-                                <div class="text-white ms-2">
-                                    <p class="mb-0">+012 345 67890</p>
-                                    <p class="mb-0">+012 345 67890</p>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i class="fas fa-envelope"></i></a>
-                                <div class="text-white ms-2">
-                                    <p class="mb-0">info@example.com</p>
-                                    <p class="mb-0">info@example.com</p>
-                                </div>
+                    <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Counter Facts Start -->
+    <div class="container-fluid counter-facts py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="counter">
+                        <div class="counter-icon w-100 d-flex align-items-center justify-content-center">
+                            <h3>Years of Excellence</h3>
+                        </div>
+                        <div class="counter-content d-flex align-items-center justify-content-center mt-4">
+                            <span class="counter-value" data-toggle="counter-up">14</span>
+                            <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="counter">
+                        <div class="counter-icon w-100 d-flex align-items-center justify-content-center">
+                            <h3>Dedicated Faculty</h3>
+                        </div>
+                        <div class="counter-content d-flex align-items-center justify-content-center mt-4">
+                            <span class="counter-value" data-toggle="counter-up">50</span>
+                            <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="counter">
+                        <div class="counter-icon w-100 d-flex align-items-center justify-content-center">
+                            <h3>Smart Classrooms</h3>
+                        </div>
+                        <div class="counter-content d-flex align-items-center justify-content-center mt-4">
+                            <span class="counter-value" data-toggle="counter-up">25</span>
+                            <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="counter">
+                        <div class="counter-icon w-100 d-flex align-items-center justify-content-center">
+                            <h3>Happy Students</h3>
+                        </div>
+                        <div class="counter-content d-flex align-items-center justify-content-center mt-4">
+                            <span class="counter-value" data-toggle="counter-up">1000</span>
+                            <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Counter Facts End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid team py-5">
+        <div class="container py-5">
+            <div class="pb-5">
+                <h4 class="text-secondary sub-title fw-bold wow fadeInUp" data-wow-delay="0.1s">Our Faculty</h4>
+                <h1 class="display-2 mb-0 wow fadeInUp" data-wow-delay="0.3s">Dedicated & Experienced Educators</h1>
+            </div>
+            <div class="team-carousel owl-carousel pt-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item border rounded wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-img bg-secondary rounded-top">
+                        <img src="img/team-1.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                        <div class="team-icon">
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-content text-center p-4">
+                        <a href="#" class="h4">Principal</a>
+                        <p class="mb-0 text-primary">School Director</p>
+                    </div>
+                </div>
+                <div class="team-item border rounded wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-img bg-secondary rounded-top">
+                        <img src="img/team-2.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                        <div class="team-icon">
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-content text-center p-4">
+                        <a href="#" class="h4">Science Faculty</a>
+                        <p class="mb-0 text-primary">Head of Science Department</p>
+                    </div>
+                </div>
+                <div class="team-item border rounded wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-img bg-secondary rounded-top">
+                        <img src="img/team-3.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                        <div class="team-icon">
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-content text-center p-4">
+                        <a href="#" class="h4">Mathematics Faculty</a>
+                        <p class="mb-0 text-primary">Senior Mathematics Teacher</p>
+                    </div>
+                </div>
+                <div class="team-item border rounded wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-img bg-secondary rounded-top">
+                        <img src="img/team-4.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                        <div class="team-icon">
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-content text-center p-4">
+                        <a href="#" class="h4">Sports Coach</a>
+                        <p class="mb-0 text-primary">Physical Education Head</p>
+                    </div>
+                </div>
+                <div class="team-item border rounded wow fadeInUp" data-wow-delay="0.9s">
+                    <div class="team-img bg-secondary rounded-top">
+                        <img src="img/team-4.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                        <div class="team-icon">
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-content text-center p-4">
+                        <a href="#" class="h4">English Faculty</a>
+                        <p class="mb-0 text-primary">Head of Languages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">JustDanc</h4>
+                            <p class="text-white mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum
+                                dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
+                            <div class="d-flex">
+                                <a class="btn btn-lg-square btn-primary rounded-circle me-2" href=""><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i
+                                        class="fab fa-instagram"></i></a>
+                                <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i
+                                        class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Quick Links</h4>
-                            <a href="#" class="footer-link"> About Us</a>
-                            <a href="#" class="footer-link"> Classes</a>
-                            <a href="#" class="footer-link"> Privacy Policy</a>
-                            <a href="#" class="footer-link"> Terms & Conditions</a>
-                            <a href="#" class="footer-link"> Schedule</a>
-                            <a href="#" class="footer-link"> FAQ</a>
-                            <a href="#" class="footer-link"> Contact Us</a>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Address</h4>
+                        <div class="d-flex align-items-center mb-3">
+                            <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i
+                                    class="fas fa-map-marker-alt"></i></a>
+                            <div class="text-white ms-2">
+                                <p class="mb-0">0123.. Street, New York, USA</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i
+                                    class="fa fa-phone-alt"></i></a>
+                            <div class="text-white ms-2">
+                                <p class="mb-0">+012 345 67890</p>
+                                <p class="mb-0">+012 345 67890</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <a class="btn btn-lg-square btn-primary rounded-circle mx-2" href=""><i
+                                    class="fas fa-envelope"></i></a>
+                            <div class="text-white ms-2">
+                                <p class="mb-0">info@example.com</p>
+                                <p class="mb-0">info@example.com</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <div class="footer-item">
-                                <h4 class="text-white mb-4">Newsletter</h4>
-                                <p class="text-white mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
-                                <div class="position-relative mx-auto rounded-pill">
-                                    <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
-                                    <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
-                                </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Quick Links</h4>
+                        <a href="#" class="footer-link"> About Us</a>
+                        <a href="#" class="footer-link"> Classes</a>
+                        <a href="#" class="footer-link"> Privacy Policy</a>
+                        <a href="#" class="footer-link"> Terms & Conditions</a>
+                        <a href="#" class="footer-link"> Schedule</a>
+                        <a href="#" class="footer-link"> FAQ</a>
+                        <a href="#" class="footer-link"> Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">Newsletter</h4>
+                            <p class="text-white mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum
+                                dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
+                            <div class="position-relative mx-auto rounded-pill">
+                                <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text"
+                                    placeholder="Enter your email">
+                                <button type="button"
+                                    class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Footer End -->
+    </div>
+    <!-- Footer End -->
 
-        
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright py-4">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-white"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end text-white">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-white"><a href="#" class="border-bottom text-white"><i
+                                class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right
+                        reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-white">
+                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                    Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
                 </div>
             </div>
         </div>
-        <!-- Copyright End -->
+    </div>
+    <!-- Copyright End -->
 
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
-        
+
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -399,10 +526,10 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-    
+
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    </body>
+</body>
 
 </html>
