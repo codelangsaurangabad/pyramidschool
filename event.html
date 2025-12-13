@@ -103,11 +103,13 @@
         <!-- Navbar & Hero End -->
 
         <!-- Video Popup Start -->
-        <div id="videoPopup" style="position: fixed; top: 20px; right: 20px; z-index: 9999; background: #000; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); max-width: 400px; width: 90%; display: block;">
+        <div id="videoPopup"
+            style="position: fixed; top: 20px; right: 20px; z-index: 9999; background: #000; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); max-height: 50vh; width: auto; display: block;">
             <button onclick="document.getElementById('videoPopup').style.display='none'" style="position: absolute; top: 5px; right: 5px; background: #fff; border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; z-index: 10000; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
                 <i class="fas fa-times" style="color: #000;"></i>
             </button>
-            <video controls autoplay muted loop style="width: 100%; border-radius: 10px; display: block;">
+            <video controls autoplay muted loop
+                style="max-height: 50vh; width: auto; max-width: 90vw; border-radius: 10px; display: block;">
                 <source src="img/event/expo_video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -118,8 +120,8 @@
         <!-- Header Start -->
         <style>
             .breadcrumb-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
-            .header-carousel-item { position: relative; height: 600px; overflow: hidden; }
-            .header-carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+            .header-carousel-item { position: relative; height: 600px; overflow: hidden; background: #000; }
+            .header-carousel-item img { width: 100%; height: 100%; object-fit: contain; }
             .carousel-caption { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; z-index: 2; }
             .carousel-caption h1 { font-size: 3.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
             .carousel-caption p { font-size: 1.3rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
@@ -134,7 +136,8 @@
                 .header-carousel-item { height: 400px; }
                 .carousel-caption h1 { font-size: 2rem; }
                 .carousel-caption p { font-size: 1rem; }
-                #videoPopup { max-width: 280px; top: 10px; right: 10px; }
+                #videoPopup { max-height: 30vh; top: 10px; right: 10px; }
+                #videoPopup video { max-height: 30vh; }
             }
             
             @media (max-width: 576px) {
@@ -143,7 +146,9 @@
                 .carousel-caption p { font-size: 0.9rem; }
                 .navbar-toggler { border-color: #0d6efd; }
                 .fa-bars { color: #0d6efd; }
-                #videoPopup { max-width: 250px; }
+                #videoPopup { max-height: 25vh; top: 10px; right: 10px; }
+                #videoPopup video { max-height: 25vh; }
+                .carousel-action-buttons .btn { font-size: 0.85rem; padding: 8px 20px; }
             }
             
             body { overflow-x: hidden; }
@@ -167,6 +172,41 @@
             .carousel-indicators .active {
                 background-color: #fff;
             }
+            
+            .carousel-action-buttons {
+                margin-top: 20px;
+            }
+            .carousel-action-buttons .btn {
+                font-size: 1rem;
+                padding: 12px 30px;
+                margin: 5px;
+                border-radius: 30px;
+                text-decoration: none;
+                display: inline-block;
+                transition: all 0.3s ease;
+            }
+            .carousel-action-buttons .btn-join {
+                background: #25D366;
+                color: #fff;
+                border: 2px solid #25D366;
+            }
+            .carousel-action-buttons .btn-join:hover {
+                background: #1eaa52;
+                border-color: #1eaa52;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            }
+            .carousel-action-buttons .btn-schedule {
+                background: #fff;
+                color: #0d6efd;
+                border: 2px solid #fff;
+            }
+            .carousel-action-buttons .btn-schedule:hover {
+                background: #0d6efd;
+                color: #fff;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(13, 110, 253, 0.4);
+            }
         </style>
         
         <div class="container-fluid p-0">
@@ -179,16 +219,20 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="header-carousel-item">
-                            <img src="img/event/event_expo_1.jpg" alt="EduExpo 2025 - Main Banner">
+                            <img src="img/pyramid_international_school_1.jpg" alt="EduExpo 2025 - Main Banner">
                             <div class="breadcrumb-overlay"></div>
                             <div class="carousel-caption">
                                 <h1 class="text-white fw-bold mb-3 animate__animated animate__fadeInDown">EduExpo 2025</h1>
                                 <p class="text-white mb-3 animate__animated animate__fadeInUp">A Grand Educational Exhibition at Pyramid International School</p>
-                                <ol class="breadcrumb justify-content-center mb-0">
-                                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#" class="text-white">Events</a></li>
-                                    <li class="breadcrumb-item active text-white">EduExpo 2025</li>
-                                </ol>
+                                <div class="carousel-action-buttons animate__animated animate__fadeInUp">
+                                    <a href="https://wa.me/919595737888?text=I%20want%20to%20enroll%20for%20EduExpo%202025" target="_blank"
+                                        class="btn btn-join">
+                                        <i class="fas fa-user-plus me-2"></i>Join EduExpo
+                                    </a>
+                                    <a href="#schedule" class="btn btn-schedule">
+                                        <i class="far fa-calendar-alt me-2"></i>View Schedule
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -199,26 +243,34 @@
                             <div class="carousel-caption">
                                 <h1 class="text-white fw-bold mb-3 animate__animated animate__fadeInDown">Innovation & Learning</h1>
                                 <p class="text-white mb-3 animate__animated animate__fadeInUp">Experience Science, Technology & Cultural Excellence</p>
-                                <ol class="breadcrumb justify-content-center mb-0">
-                                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#" class="text-white">Events</a></li>
-                                    <li class="breadcrumb-item active text-white">EduExpo 2025</li>
-                                </ol>
+                                <div class="carousel-action-buttons animate__animated animate__fadeInUp">
+                                    <a href="https://wa.me/919595737888?text=I%20want%20to%20enroll%20for%20EduExpo%202025" target="_blank"
+                                        class="btn btn-join">
+                                        <i class="fas fa-user-plus me-2"></i>Join EduExpo
+                                    </a>
+                                    <a href="#schedule" class="btn btn-schedule">
+                                        <i class="far fa-calendar-alt me-2"></i>View Schedule
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="header-carousel-item">
-                            <img src="img/about-2.png" alt="Join The Celebration">
+                            <img src="img/pyramid_international_school_1.jpg" alt="Join The Celebration">
                             <div class="breadcrumb-overlay"></div>
                             <div class="carousel-caption">
                                 <h1 class="text-white fw-bold mb-3 animate__animated animate__fadeInDown">January 18-19, 2025</h1>
                                 <p class="text-white mb-3 animate__animated animate__fadeInUp">Two Days of Workshops, Competitions & Exhibitions</p>
-                                <ol class="breadcrumb justify-content-center mb-0">
-                                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#" class="text-white">Events</a></li>
-                                    <li class="breadcrumb-item active text-white">EduExpo 2025</li>
-                                </ol>
+                                <div class="carousel-action-buttons animate__animated animate__fadeInUp">
+                                    <a href="https://wa.me/919595737888?text=I%20want%20to%20enroll%20for%20EduExpo%202025" target="_blank"
+                                        class="btn btn-join">
+                                        <i class="fas fa-user-plus me-2"></i>Join EduExpo
+                                    </a>
+                                    <a href="#schedule" class="btn btn-schedule">
+                                        <i class="far fa-calendar-alt me-2"></i>View Schedule
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -301,6 +353,8 @@
                                 target="_blank" class="btn btn-success btn-lg rounded-pill py-3 px-5"><i
                                     class="fab fa-whatsapp me-2"></i>Register on WhatsApp</a>
                             <a href="#schedule" class="btn btn-primary btn-lg rounded-pill py-3 px-5">View Schedule</a>
+                            <a href="documents/EduExpo 2025 Program Schedule Final.pdf" download
+                                class="btn btn-danger btn-lg rounded-pill py-3 px-5"><i class="fas fa-download me-2"></i>Download Brochure</a>
                         </div>
                     </div>
                     <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.4s">
