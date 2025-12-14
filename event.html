@@ -753,10 +753,10 @@
         
                                     <!-- Current Class/Grade -->
                                     <div class="col-md-6">
-                                        <label for="currentClass" class="form-label fw-bold">Current Class / Grade <span
-                                                class="text-danger">*</span></label>
-                                        <select class="form-select" id="currentClass" name="currentClass" required>
-                                            <option value="" selected disabled>Select current class</option>
+                                        <label for="currentClass" class="form-label fw-bold">Current Class / Grade</label>
+                                        <select class="form-select" id="currentClass" name="currentClass">
+                                            <option value="" selected>Select current class (if applicable)</option>
+                                            <option value="Not in School Yet">Not in School Yet</option>
                                             <option value="Nursery">Nursery</option>
                                             <option value="LKG">LKG</option>
                                             <option value="UKG">UKG</option>
@@ -772,18 +772,16 @@
                                             <option value="Class 10">Class 10</option>
                                             <option value="Class 11">Class 11</option>
                                             <option value="Class 12">Class 12</option>
-                                            <option value="Not in School">Not in School Yet</option>
                                         </select>
-                                        <div class="invalid-feedback">Please select current class.</div>
+                                        <small class="text-muted">Leave blank if child is not in school yet</small>
                                     </div>
         
                                     <!-- Current School -->
                                     <div class="col-12">
-                                        <label for="currentSchool" class="form-label fw-bold">Current School <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="currentSchool" name="currentSchool" required
-                                            placeholder="Enter current school name">
-                                        <div class="invalid-feedback">Please enter current school name.</div>
+                                        <label for="currentSchool" class="form-label fw-bold">Current School</label>
+                                        <input type="text" class="form-control" id="currentSchool" name="currentSchool"
+                                            placeholder="Enter current school name (if applicable)">
+                                        <small class="text-muted">Leave blank if child is not in school yet</small>
                                     </div>
         
                                     <!-- Admission Interest -->
@@ -1080,8 +1078,8 @@
                         mobileNumber: document.getElementById('mobileNumber').value.trim(),
                         childName: document.getElementById('childName').value.trim(),
                         childAge: document.getElementById('childAge').value.trim(),
-                        currentClass: document.getElementById('currentClass').value,
-                        currentSchool: document.getElementById('currentSchool').value.trim(),
+                        currentClass: document.getElementById('currentClass').value || 'Not specified',
+                        currentSchool: document.getElementById('currentSchool').value.trim() || 'Not applicable',
                         admissionInterest: document.getElementById('admissionInterest').value,
                         admissionClass: document.getElementById('admissionClass').value || 'Not specified',
                         residentialArea: document.getElementById('residentialArea').value.trim()
@@ -1139,6 +1137,31 @@
                 });
             });
         })();
+
+    // Hide video popup when registration form is in view
+    (function () {
+        const videoPopup = document.getElementById('videoPopup');
+        const registrationSection = document.getElementById('registration-form');
+
+        if (videoPopup && registrationSection) {
+            // Create Intersection Observer to detect when registration form is visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Registration form is visible, hide video
+                        videoPopup.style.display = 'none';
+                    } else {
+                        // Registration form is not visible, show video
+                        videoPopup.style.display = 'block';
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            });
+
+            observer.observe(registrationSection);
+        }
+    })();
     </script>
     </body>
 
