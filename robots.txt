@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /lib/
+Disallow: /scss/
+
+Sitemap: https://pyramidschool.org/sitemap.xml
