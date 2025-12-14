@@ -18,7 +18,6 @@
 | ---------------- | ----------------------------------------------------- | ------ |
 | index.html       | Pyramid International School - CBSE Affiliated School | ✅     |
 | about.html       | About Us - Pyramid International School               | ✅     |
-| team.html        | Principal's Message - Pyramid International School    | ✅     |
 | training.html    | Academic Programs & Facilities                        | ✅     |
 | testimonial.html | Parent Testimonials                                   | ✅     |
 | contact.html     | Contact Us - Pyramid International School             | ✅     |
